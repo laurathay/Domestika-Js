@@ -3,6 +3,17 @@ var grupoTarjetas = ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "�
 // EXERCICE: concatène les groupCards avec lui-même pour les dupliquer
 // les valeurs
 
+var totalTarjetas;
+totalTarjetas = grupoTarjetas.concat(grupoTarjetas); //la ca concatene du coup
+
+function barajaTarjetas(){ //une fonction pour que ca "distribue"
+    var resultado;
+    resultado = totalTarjetas.sort(function(){
+        return 0.5 - Math.random(); //grace a ca que ca devient random
+    });
+    return resultado;
+}
+
 
 
   // EXERCICE: parcourez le tableau des cartes mélangées et pour chaque
@@ -11,6 +22,18 @@ var grupoTarjetas = ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "�
   // de celui-ci, un div avec la classe "card__content".
   // Ajoute également la valeur de l'élément en tant que contenu de la carte
   
+function reparteTarjetas(){
+    var mesa = document.querySelector("#mesa");
+    var tarjetasBarajadas = barajaTarjetas();
+    mesa.innerHTML = "";
+
+    tarjetasBarajadas.forEach(function(e) {
+        var tarjetas = document.createElement('div');
+        tarjetas.innerHTML = '<div class="tarjeta">' + '<div class="tarjeta__contenido' + e + "</div>" + "</div>" 
+        
+        mesa.appendChild(tarjetas);
+    });
+}
 
 
 
