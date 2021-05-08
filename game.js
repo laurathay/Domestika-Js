@@ -36,10 +36,18 @@ function reparteTarjetas(){
 }
 
 
-
-
 // EXERCICE: une fois que vous avez créé la carte, et toujours à l'intérieur du
   // boucle, ajoute la carte générée comme "enfant" du nœud de table.
 
   // BONUS: vous pourriez avoir des cartes distribuées uniquement lorsque
   // un bouton est enfoncé qui dit "distribuer les cartes"
+
+  function descubrir() {
+      this.classList.add("descubierta");
+  }
+
+  reparteTarjetas();
+
+  document.querySelectorAll(".tarjeta").forEach(function(elemento){
+      elemento.addEventListener("click", descubrir);
+  });
