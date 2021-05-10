@@ -43,8 +43,14 @@ function reparteTarjetas(){
   // un bouton est enfoncé qui dit "distribuer les cartes"
 
   function descubrir() {
+      var totalDescubiertas = document.querySelectorAll(".descubierta");
+      
+      if (totalDescubiertas.length > 1) {
+          return;
+      }
+
       this.classList.add("descubierta");
-  }
+    }
 
   reparteTarjetas();
 
