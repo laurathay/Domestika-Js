@@ -43,13 +43,27 @@ function reparteTarjetas(){
   // un bouton est enfoncé qui dit "distribuer les cartes"
 
   function descubrir() {
+      var descubiertas;
       var totalDescubiertas = document.querySelectorAll(".descubierta");
+
+      this.setAttribute("ejemplo", "fdjnsk");
       
       if (totalDescubiertas.length > 1) {
           return;
       }
 
       this.classList.add("descubierta");
+
+      descubiertas = document.querySelectorAll(".descubierta");
+      if (descubiertas.length < 2) {
+          return;
+      }
+
+      if ((descubiertas)[0].textContent === (descubiertas)[1].textContent) {
+          console.log("acierto");
+      } else {
+          console.log("error");
+      }
     }
 
   reparteTarjetas();
